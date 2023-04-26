@@ -1,0 +1,7 @@
+.font{
+    background-image: url('error-404.jpg');
+    background-size: cover;
+    height: calc(100vh - 111px);
+    max-width: 100%;
+
+}

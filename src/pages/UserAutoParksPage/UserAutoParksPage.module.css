@@ -1,0 +1,60 @@
+.autoParkBlock{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+.park{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: space-around;
+    width: 30%;
+}
+.park div{
+    width: 100%;
+}
+.carsList{
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
+}
+.car{
+    width: 100%;
+}
+.formBlock{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    background-color: #d5e0dd;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 2px solid #869191;
+}
+.parkForm{
+/*    width: 30%;*/
+}
+.carForm{
+    width: 65%;
+}
+.parkAndCars{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    width: 100%;
+}
+.parkList{
+    display: flex;
+    max-width: 30%;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.parkList>div{
+    width: 100%;
+    align-content: flex-start;
+}

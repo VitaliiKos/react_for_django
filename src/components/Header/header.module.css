@@ -1,0 +1,64 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    background: linear-gradient(135deg, #959595 0%, #0d0d0d 46%, #010101 50%, #0a0a0a 53%, #4e4e4e 76%, #383838 87%, #1b1b1b 100%);
+
+    min-height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+}
+
+.menu a {
+    color: gold;
+    font-size: 28px;
+    text-decoration: none;
+
+}
+.authMenu{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+}
+.userInfo {
+    position: absolute;
+    right: 70px;
+}
+.userProfile{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 20%;
+}
+
+.footer {
+    min-height: 15px;
+    background-color: #282c34;
+    color: gold;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.content {
+    width: 95%;
+    margin: 0 auto;
+    height: calc(100vh - 122px);
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.menu a[class='active'] {
+    text-decoration: underline;
+    color: red;
+}

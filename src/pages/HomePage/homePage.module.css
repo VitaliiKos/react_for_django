@@ -1,0 +1,30 @@
+.wrapperHomepage {
+    width: 100vw;
+    min-height: calc(100vh - 100px);
+    background-image: url("main.jpg");
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
+    box-sizing: border-box;
+    background-color: #282c34;
+}
+
+.wrapperHomepage {
+    font-family: "Roboto Light", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #eec90f;
+}
+
+.description {
+    word-break: break-word;
+    padding: 20px;
+    background-color: rgba(40, 44, 52, 0.89);
+    width: 100%;
+    min-height: calc(100vh - 100px);
+}
+
+@media screen and (max-width: 1200px) {
+    .wrapperHomepage {
+        font-size: 18px;
+    }
+}

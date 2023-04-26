@@ -1,0 +1,62 @@
+.ProfileWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+    box-sizing: border-box;
+    width: 100%;
+    gap: 20px;
+}
+.ProfileImage{
+    width: 40%;
+}
+.ProfileImage img{
+    width: 60%;
+}
+
+.ProfileDescription{
+    width: 55%;
+}
+.my_parks{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+/*.formBlock{*/
+/*    width: 80%;*/
+/*}*/
+.title{
+    width: 100%;
+}
+.profileForm{
+    position: fixed;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    top: 100px;
+    background-color: #8ea6a2;
+
+    box-sizing: border-box;
+    padding: 20px;
+}
+.profileForm form{
+    width: 80%;
+}
+.profileForm form input{
+    width: 70%;
+    font-size: 14px;
+    font-weight: 600;
+}
+.profileFormButton{
+    margin: 10px;
+}
+.profileFormButtonClose{
+    position: absolute;
+    right: 20px;
+}

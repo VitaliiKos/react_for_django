@@ -1,0 +1,56 @@
+.carCard {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 23%;
+
+    box-sizing: border-box;
+    margin: 10px auto;
+    padding: 5px;
+    height: 170px;
+
+    box-shadow: 5px 5px 30px 7px rgb(0, 0, 0), -5px -5px 30px 7px rgb(0, 0, 0);
+    transition: 0.4s;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: gold;
+    word-break: break-word;
+
+}
+
+.carCard:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 30px 15px rgba(194, 252, 49, 0.32), -5px -5px 30px 15px rgb(0 0 0 / 65%);
+    cursor: pointer;
+}
+
+
+.carCard h3 {
+    margin: 4px;
+}
+
+.carImg{
+    width: 30%;
+}
+.carImg img{
+    width: 100%;
+}
+.carImgBlock {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 100%;
+}
+.carDescription{
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .carCard {
+        width: 46%;
+    }
+}
