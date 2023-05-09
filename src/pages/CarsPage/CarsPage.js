@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 import {carActions} from "../../redux";
 import {Car} from "../../components";
-import css from './carPage.module.css'
+import css from './carsPage.module.css'
 import {useSearchParams} from "react-router-dom";
 
 const CarsPage = () => {
@@ -18,6 +18,38 @@ const CarsPage = () => {
 
     return (
         <div className={css.carWrapper}>
+            <div className={css.modelClass}>
+                <div className={css.carType}>
+                    <h4>Economy</h4>
+                    <img src="https://7cars.com.ua/wp-content/uploads/2016/03/econom.jpg" alt="Economy"/>
+
+                </div>
+
+                <div className={css.carType}>
+                    <h4>Middle</h4>
+                    <img src="https://7cars.com.ua/wp-content/uploads/2016/03/middle.jpg" alt="Middle"/>
+                </div>
+
+                <div className={css.carType}>
+                    <h4>Business</h4>
+                    <img src="https://7cars.com.ua/wp-content/uploads/2016/03/business.jpg" alt="Business"/>
+                </div>
+
+                <div className={css.carType}>
+                    <h4>Premium</h4>
+                    <img src="https://7cars.com.ua/wp-content/uploads/2016/03/premium.jpg" alt="Premium"/>
+                </div>
+
+                <div className={css.carType}>
+                    <h4>SUV</h4>
+                    <img src="https://7cars.com.ua/wp-content/uploads/2016/03/offroad.jpg" alt="Off-road vehicle"/>
+                </div>
+
+                <div className={css.carType}>
+                    <h4>Minivan</h4>
+                    <img src="https://7cars.com.ua/wp-content/uploads/2016/03/middle.jpg" alt="minivan"/>
+                </div>
+            </div>
             <div className={css.carListBlock}>
                 {
                     cars &&

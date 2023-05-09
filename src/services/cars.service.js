@@ -7,7 +7,10 @@ const carsServices = {
     getById: (id) => apiService.get(mainUrls.cars.byId(id)),
     addNew: (car, selectedPark) => apiService.post(`${mainUrls.autoParks.autoParks}/${selectedPark}/cars`, car),
     deleteById: (id) => apiService.delete(mainUrls.cars.byId(id)),
-    putById: (id, data) => apiService.put(mainUrls.cars.byId(id), data)
+    putById: (id, data) => apiService.put(mainUrls.cars.byId(id), data),
+    photo: (id, formData) => apiService.post(mainUrls.cars.addPhoto(id), formData),
+    deletePhotoById: (id) => apiService.delete(mainUrls.cars.deletePhoto(id)),
+
 }
 
 export {carsServices};

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
 import {userActions} from "../../redux";
-import {UserProfile} from "../../components";
+import {SimpleUserProfile, UserProfile} from "../../components";
 
 const UserProfilePage = () => {
 
@@ -16,7 +16,11 @@ const UserProfilePage = () => {
     return (
         <div>
             {
-                user_profile && <UserProfile user_profile={user_profile}/>
+                !!user_profile &&
+                    user_profile['is_staff'] ?
+                    <UserProfile user_profile={user_profile}/> :
+                    <SimpleUserProfile user_profile={user_profile}/>
+
             }
 
         </div>

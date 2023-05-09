@@ -33,6 +33,8 @@ apiService.interceptors.response.use((config) => {
             }
             isRefreshing = false;
             return apiService(error.config)
+        }else if (error.response?.status === 401 && !authService.isAuthenticated()){
+            history.replace('/login?expSession=true')
         }
         return Promise.reject(error);
     }

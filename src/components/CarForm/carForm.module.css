@@ -3,13 +3,14 @@
     top: 60px;
     right: 20px;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
     flex-direction: column;
     gap: 2px;
     /*position: fixed;*/
     background: linear-gradient(135deg,  #d8e0de 0%,#aebfbc 22%,#99afab 33%,#8ea6a2 50%,#829d98 67%,#4e5c5a 82%,#0e0e0e 100%);
     /*width: 50%;*/
-    height: 220px;
+    height: 250px;
     align-items: center;
     z-index: 2;
 

@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
-import {autoParkServices, carsServices} from "../../services";
+import {autoParkServices} from "../../services";
 
 let initialState = {
     statusIsAuthenticated: false,
@@ -58,6 +58,7 @@ const getById = createAsyncThunk(
 const deleteAutoPark = createAsyncThunk(
     'autoParkSlice/deleteAutoPark',
     async ({id}, thunkAPI) => {
+        console.log(id)
         try {
             await autoParkServices.deleteById(id);
         } catch (e) {

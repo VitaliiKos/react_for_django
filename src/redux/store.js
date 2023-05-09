@@ -1,11 +1,12 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 
-import {carReducer, userReducer, autoParkReducer} from "./slice";
+import {carReducer, userReducer, autoParkReducer, orderReducer} from "./slice";
 
 const rootReducer = combineReducers({
     cars: carReducer,
     users: userReducer,
-    autoParks: autoParkReducer
+    autoParks: autoParkReducer,
+    orderMessages: orderReducer
 });
 
 const setupStore = () => configureStore({

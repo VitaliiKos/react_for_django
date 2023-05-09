@@ -13,7 +13,7 @@ import {
 } from "./pages";
 import {RouterEndpoints} from "./routes";
 import css from './app.module.css';
-import {AutoParkDetail, CarDetail, EmailMsg} from "./components";
+import {CarDetail, EmailMsg} from "./components";
 
 function App() {
     return (<div className={css.App}>
@@ -22,10 +22,8 @@ function App() {
                 <Route path={RouterEndpoints.index} index element={<HomePage/>}/>
 
                 <Route element={<AuthRequireLayout/>}>
-                    {/*<Route path={RouterEndpoints.cars} element={<CarsPage/>}/>*/}
                     <Route path={`${RouterEndpoints.cars}/detail/:id`} element={<CarDetail/>}/>
-                    <Route path={`${RouterEndpoints.profile}`} element={<UserProfilePage/>}>
-                    </Route>
+                    <Route path={`${RouterEndpoints.profile}`} element={<UserProfilePage/>}/>
 
                     <Route path={RouterEndpoints.autoParks} element={<AutoParksPage/>}>
                         <Route index element={<CarsPage/>}/>

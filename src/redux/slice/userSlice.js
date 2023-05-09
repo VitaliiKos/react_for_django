@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
-import {authService} from "../../services";
+import {authService, orderServices} from "../../services";
 
 let initialState = {
     errors: null,
@@ -40,14 +40,12 @@ const userUpdate = createAsyncThunk(
     'userSlice/userUpdate',
     async ({user}, thunkAPI) => {
         try {
-            const {data} = await authService.updateProfile(user);
-            return data;
+            await authService.updateProfile(user);
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data);
         }
     }
 );
-
 
 
 const myProfile = createAsyncThunk(
@@ -62,6 +60,17 @@ const myProfile = createAsyncThunk(
     }
 );
 
+const orderCar = createAsyncThunk(
+    'userSlice/orderCar',
+    async ({car_id, data}, thunkAPI) => {
+        try {
+            await orderServices.create(car_id, data);
+        } catch (e) {
+            return thunkAPI.rejectWithValue(e.response.data);
+        }
+    }
+);
+
 const userSlice = createSlice({
     name: 'userSlice',
     initialState,
@@ -70,7 +79,7 @@ const userSlice = createSlice({
             authService.deleteTokens()
             state.statusIsAuthenticated = false
         },
-        setStatusIsAuthenticated: (state,action) => {
+        setStatusIsAuthenticated: (state, action) => {
             state.statusIsAuthenticated = action.payload
         },
 
@@ -98,6 +107,7 @@ const userActions = {
     myProfile,
     addAvatar,
     userUpdate,
+    orderCar,
     setStatusIsAuthenticated
 };
 

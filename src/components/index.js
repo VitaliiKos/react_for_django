@@ -12,3 +12,6 @@ export * from './AutoParkDetail/AutoParkDetail';
 export * from './AutoParkForm/AutoParkForm';
 export * from './FileInput/FileInput';
 export * from './UserProfileForm/UserProfileForm';
+export * from './OrderingCar/OrderingCar';
+export * from './SimpleUserProfile/SimpleUserProfile';
+export * from './Order/Order';

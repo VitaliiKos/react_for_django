@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {autoParkActions} from "../../redux";
 
+import {autoParkActions} from "../../redux";
 import {AutoParkForm, CarForm, UserCar} from "../../components";
 import css from './UserAutoParksPage.module.css'
 
@@ -11,15 +11,18 @@ const UserAutoParksPage = () => {
     const dispatch = useDispatch();
     const {autoParks, userCars, selectedPark} = useSelector(state => state.autoParks);
 
-    useEffect(() => {
-        dispatch(autoParkActions.getAllByUser())
-    }, [dispatch, userCars]);
-
-
     const showCars = (data) => {
         dispatch(autoParkActions.setUserCars(data.cars))
         dispatch(autoParkActions.setSelectedAutoParks(data.park))
     }
+    const deletePark = (id)=>{
+        dispatch(autoParkActions.deleteAutoPark({id}))
+        dispatch(autoParkActions.getAllByUser())
+    }
+    useEffect(() => {
+        dispatch(autoParkActions.getAllByUser())
+    }, [dispatch, userCars]);
+
 
     return (
         <>
@@ -43,10 +46,10 @@ const UserAutoParksPage = () => {
                                     </div>
                                     <div>
                                         <button
-                                            onClick={() => dispatch(autoParkActions.deleteAutoPark({id: park.id}))}>Delete
+                                            onClick={() => deletePark(park.id)}>Delete
+                                            {/*onClick={() => dispatch(autoParkActions.deleteAutoPark({id: park.id}))}>Delete*/}
                                         </button>
                                     </div>
-
                                     <div>
                                         <button onClick={() => {
                                             showCars({cars: park.cars, park: park.id})

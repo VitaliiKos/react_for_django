@@ -1,22 +1,27 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
+import {useForm} from "react-hook-form";
 
 import {AvatarCreateForm} from "../AvatarCreateForm/AvatarCreateForm";
 import {UserAutoParksPage} from "../../pages";
 import {userActions} from "../../redux";
 import css from './userProfile.module.css';
-import {useForm} from "react-hook-form";
 
 const UserProfile = ({user_profile}) => {
-    const dispatch = useDispatch();
-    const [user, setUser] = useState('');
-    const {register, setValue, reset, handleSubmit} = useForm()
-    // const {user_profile} = useSelector(state => state.users);
+
     const {
         email,
         profile: {age, name, surname},
-        created_at
+        created_at,
+        updated_at
     } = user_profile;
+
+    const dispatch = useDispatch();
+    const [user, setUser] = useState('');
+    const {avatar_img} = useSelector(state => state.users);
+
+    const {register, setValue, reset, handleSubmit} = useForm()
+
 
     useEffect(() => {
         if (user) {
@@ -31,18 +36,12 @@ const UserProfile = ({user_profile}) => {
         if (user) {
             const userId = user.id;
             dispatch(userActions.userUpdate({userId, user}));
-            dispatch(userActions.myProfile())
             setUser('')
             reset();
+            dispatch(userActions.myProfile())
+
         }
     }
-
-    const {avatar_img} = useSelector(state => state.users);
-
-    useEffect(() => {
-        dispatch(userActions.myProfile())
-
-    }, [avatar_img, dispatch])
 
     return (
         <div className={css.ProfileWrapper}>
@@ -59,6 +58,7 @@ const UserProfile = ({user_profile}) => {
                 <h3>Age: {age}</h3>
                 <h3>Email: {email}</h3>
                 <h3>Created: {created_at}</h3>
+                <h3>Created: {updated_at}</h3>
             </div>
 
             <div className={css.my_parks}>
@@ -74,7 +74,7 @@ const UserProfile = ({user_profile}) => {
                 user &&
                 <div className={css.profileForm}>
                     <div className={css.profileFormButtonClose}>
-                        <button onClick={()=>setUser('')}>X</button>
+                        <button onClick={() => setUser('')}>X</button>
                     </div>
                     <form onSubmit={handleSubmit(save)}>
                         <div>
@@ -94,8 +94,6 @@ const UserProfile = ({user_profile}) => {
                     </form>
                 </div>
             }
-
-
         </div>
     );
 };

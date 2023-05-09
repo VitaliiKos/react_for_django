@@ -13,4 +13,21 @@ export const CarValidator = Joi.object({
     year: Joi.number().min(1990).max(new Date().getFullYear()).required().messages({
         'number.base':'min.year - 1990 max.year - now'
     }),
+    car_body: Joi.string().regex(/^[a-zA-ZА-яёЁіІїЇґҐ]{2,20}$/).required().messages({
+        'string.empty':'"brand": can\'t be empty',
+        'string.pattern.base':'"brand": Only letters. min.1 letter max.20 letters',
+    }),
+    car_model: Joi.string().regex(/^[a-zA-ZА-яёЁіІїЇґҐ0-9]{1,20}$/).required().messages({
+        'string.empty':'"brand": can\'t be empty',
+        'string.pattern.base':'"brand": Only letters. min.1 letter max.20 letters',
+    }),
+    gearbox: Joi.string().regex(/^[a-zA-ZА-яёЁіІїЇґҐ]{2,20}$/).required().messages({
+        'string.empty':'"brand": can\'t be empty',
+        'string.pattern.base':'"brand": Only letters. min.1 letter max.20 letters',
+    }),
+    oil: Joi.string().regex(/^[a-zA-ZА-яёЁіІїЇґҐ]{2,20}$/).required().messages({
+        'string.empty':'"brand": can\'t be empty',
+        'string.pattern.base':'"brand": Only letters. min.1 letter max.20 letters',
+    }),
+
 })

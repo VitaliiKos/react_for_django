@@ -16,12 +16,15 @@ const CarForm = ({selectedPark}) => {
     const dispatch = useDispatch();
     const {carForUpdate} = useSelector(state => state.cars);
 
-
     useEffect(() => {
         if (carForUpdate) {
             setValue('brand', carForUpdate.brand, {shouldValidate: true})
             setValue('price', carForUpdate.price, {shouldValidate: true})
             setValue('year', carForUpdate.year, {shouldValidate: true})
+            setValue('car_body', carForUpdate.car_body, {shouldValidate: true})
+            setValue('car_model', carForUpdate.car_model, {shouldValidate: true})
+            setValue('oil', carForUpdate.oil, {shouldValidate: true})
+            setValue('gearbox', carForUpdate.gearbox, {shouldValidate: true})
         }
     }, [setValue, carForUpdate]);
 
@@ -52,6 +55,18 @@ const CarForm = ({selectedPark}) => {
                     </label>
                     <label><h4>Price</h4>
                         <input type="text" {...register('price', {valueAsNumber: true})}/>
+                    </label>
+                    <label><h4>Car body</h4>
+                        <input type="text" {...register('car_body')}/>
+                    </label>
+                    <label><h4>Model</h4>
+                        <input type="text" {...register('car_model')}/>
+                    </label>
+                    <label><h4>Oil</h4>
+                        <input type="text" {...register('oil')}/>
+                    </label>
+                    <label><h4>Gearbox</h4>
+                        <input type="text" {...register('gearbox')}/>
                     </label>
                     <button>{carForUpdate ? 'Update' : 'Create'}</button>
                 </div>

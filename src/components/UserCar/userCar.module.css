@@ -1,4 +1,7 @@
 .carWrapper{
+    display: flex;
+    flex-wrap: nowrap;
+
     border: 2px solid #30e50d;
     margin: 5px;
 }
@@ -6,6 +9,7 @@
 .carImage{
     width: 30%;
     margin: 5px;
+    position: relative;
 }
 .carImage img{
     width: 100%;
@@ -13,6 +17,32 @@
 }
 .carImageWrapper{
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
+    width: 65%;
+}
+.carButtonBlock{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 5px;
 
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.carDescription{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+
+}
+.carPhotoForm{
+    width: 100%;
+}
+.deletePhoto{
+position: absolute;
+    right: 20px;
 }

@@ -2,17 +2,16 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
 
-import {carActions, userActions} from "../../redux";
+import {carActions} from "../../redux";
 import {Car} from "../../components";
-import css from "../CarsPage/carPage.module.css";
-import {authService} from "../../services";
+import css from "../CarsPage/carsPage.module.css";
 
 const AutoParkCarsPage = () => {
     const {id} = useParams();
 
     const dispatch = useDispatch();
     const {cars} = useSelector(state => state.cars);
-    const {statusIsAuthenticated} = useSelector(state => state.users);
+    // const {statusIsAuthenticated} = useSelector(state => state.users);
 
     useEffect(() => {
         dispatch(carActions.getAllByPark({id}))

@@ -27,3 +27,19 @@
     width: 100%;
     color: #30e50d;
 }
+.modelClass{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    gap: 5px;
+    align-items: center;
+}
+.carType h4{
+    color: gold;
+}
+.carType{
+    width: 15%;
+}
+.carType img{
+    width: 100%;
+}

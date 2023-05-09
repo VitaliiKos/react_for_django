@@ -17,6 +17,8 @@ const mainUrls = {
     cars: {
         cars,
         byId: (id) => `${cars}/${id}`,
+        addPhoto: (id) => `${cars}/${id}/photo`,
+        deletePhoto: (id) => `${cars}/photo/${id}`,
         byParkId: (id) => `${autoParks}/${id}${cars}`
     },
     autoParks: {
@@ -27,7 +29,12 @@ const mainUrls = {
     users: {
         users: users,
         profile: `${users}/profile`,
-    }
+        order: `/orders/car`,
+        my_orders: `/orders/my`,
+        orderById: (id) => `orders/${id}`,
+
+    },
+
 }
 
 

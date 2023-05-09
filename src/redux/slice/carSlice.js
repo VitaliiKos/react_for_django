@@ -78,9 +78,27 @@ const updateCar = createAsyncThunk(
     'carSlice/updateCar',
     async ({carId, car}, thunkAPI) => {
         try {
-            console.log(carId, car)
             await carsServices.putById(carId, car);
-            thunkAPI.dispatch(getAll({page: 1}));
+        } catch (e) {
+            return thunkAPI.rejectWithValue(e.response.data);
+        }
+    }
+);
+const addPhoto = createAsyncThunk(
+    'carSlice/addPhoto',
+    async ({id, formData}, thunkAPI) => {
+        try {
+            await carsServices.photo(id, formData);
+        } catch (e) {
+            return thunkAPI.rejectWithValue(e.response.data);
+        }
+    }
+);
+const deletePhoto = createAsyncThunk(
+    'carSlice/deletePhoto',
+    async ({id}, thunkAPI) => {
+        try {
+            await carsServices.deletePhotoById(id);
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data);
         }
@@ -156,6 +174,8 @@ const carActions = {
     createNew,
     updateCar,
     getAllByPark,
+    addPhoto,
+    deletePhoto,
     setCarForUpdate,
     getById,
     setStatusIsAuthenticated,
